@@ -1,8 +1,8 @@
 import requests
 import json
 
-GITHUB_TOKEN = "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"
-HEADERS = {"Authorization": f"token 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"}
+GITHUB_TOKEN = "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"
+HEADERS = {"Authorization": f"token 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"}
 URL = "https://api.github.com/repos/vercel/next.js/issues"
 PARAMS = {"state": "closed", "labels": "bug", "per_page": 100}
 
