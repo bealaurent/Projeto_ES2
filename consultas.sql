@@ -6,3 +6,6 @@ SELECT tema_relacionado, AVG(tempo_resolucao) AS tempo_medio FROM issues GROUP B
 
 -- Consulta para distribuição de prioridades
 SELECT prioridade, COUNT(*) AS total FROM issues GROUP BY prioridade;
+
+-- Calcula tempo de resolução
+UPDATE issues SET tempo_resolucao = EXTRACT(DAY FROM (data_conclusao - data_abertura));
