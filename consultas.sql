@@ -21,3 +21,5 @@ SELECT COUNT(*)
 FROM issues
 WHERE tema_relacionado != '[]'
   AND tema_relacionado IS NOT NULL;
+
+  ##testando
