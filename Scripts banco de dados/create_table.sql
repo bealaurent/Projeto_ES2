@@ -8,7 +8,7 @@ CREATE TABLE issues (
     user_author TEXT,
     user_assigned TEXT,
     labels TEXT[],
-    tema_relacionado TEXT,
+    related_theme TEXT,
     resolution_time_days TIMESTAMPTZ,
     priority TEXT,
     milestone TEXT

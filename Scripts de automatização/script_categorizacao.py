@@ -58,7 +58,7 @@ try:
         cur.execute(
             """
             UPDATE issues
-            SET tema_relacionado = %s
+            SET related_theme = %s
             WHERE issue_id = %s
             """,
             (temas_json, id)

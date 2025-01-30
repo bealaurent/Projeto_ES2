@@ -1,8 +1,8 @@
 -- Consulta o número de issues por tema
-SELECT tema_relacionado, COUNT(*) AS total FROM issues GROUP BY tema_relacionado;
+SELECT related_theme, COUNT(*) AS total FROM issues GROUP BY related_theme;
 
 -- Consulta o tempo médio de resolução por tema
-SELECT tema_relacionado, AVG(tempo_resolucao) AS tempo_medio FROM issues GROUP BY tema_relacionado;
+SELECT related_theme, AVG(tempo_resolucao) AS tempo_medio FROM issues GROUP BY related_theme;
 
 -- Consulta para distribuição de prioridades
 SELECT prioridade, COUNT(*) AS total FROM issues GROUP BY prioridade;
@@ -10,16 +10,16 @@ SELECT prioridade, COUNT(*) AS total FROM issues GROUP BY prioridade;
 -- Calcula tempo de resolução
 UPDATE issues SET tempo_resolucao = EXTRACT(DAY FROM (data_conclusao - data_abertura));
 
-Select tema_relacionado from issues where is null
-ALTER TABLE issues ADD COLUMN tema_relacionado JSONB;
+Select related_theme from issues where is null
+ALTER TABLE issues ADD COLUMN related_theme JSONB;
 
-SELECT issue_id, body, tema_relacionado
+SELECT issue_id, body, related_theme
 FROM issues
-WHERE tema_relacionado != '[]';
+WHERE related_theme != '[]';
 
 SELECT COUNT(*)
 FROM issues
-WHERE tema_relacionado != '[]'
-  AND tema_relacionado IS NOT NULL;
+WHERE related_theme != '[]'
+  AND related_theme IS NOT NULL;
 
   ##testando
