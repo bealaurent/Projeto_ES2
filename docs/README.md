@@ -1,6 +1,6 @@
-# 📊 Análise de Issues de Projetos Open Source
+# 📊 Análise de Issues do Next.js
 
-Este projeto tem como objetivo extrair, processar e analisar issues do projeto Next.js Open Source, armazenando essas informações em um banco de dados PostgreSQL.
+Este projeto tem como objetivo extrair, processar e analisar issues do projeto Next.js Open Source, armazenando essas informações em um banco de dados PostgreSQL e como se relaciona com conceitos de Engenharia da computação.
 
 ## 📁 Estrutura do Projeto
 
