@@ -1,0 +1,906 @@
+title,link_to_code,related_theme,current_vs_expected,additional_context
+"Unable to run production build in next 15.2.0-canary.10, 15.2.0-canary.9 seems to work",https://github.com/vercel/next.js/tree/canary/examples/reproduction-template,['padroes_de_projeto'],"I wanted to try out the new `use cache` features in my existing project. Everything works fine in dev mode. When deploying to vercel, I get the following error `Error: ENOENT: no such file or directory, lstat '/vercel/path0/lc/.next/server/app/favicon.ico/route_client-reference-manifest.js'`.
+
+When I build locally and then start the server I get this error message:
+
+```
+Error: Expected to use Webpack bindings (react-server-dom-webpack/server.edge) for React but the current process is referencing 'registerServerReference' from the Turbopack bindings (react-server-dom-turbopack/server.edge). This is likely a bug in our integration of the Next.js server runtime.
+    at Object.get [as registerServerReference] (.next/server/chunks/ssr/ef794_next_dist_83da9c._.js:14:28)
+    at Module.registerServerReference (.next/server/chunks/ssr/[turbopack]_runtime.js:90:19)
+    at [project]/src/actions/finishLesson.ts [app-rsc] (ecmascript) (.next/server/chunks/ssr/[root of the server]__977a75._.js:287:428)
+    at instantiateModule (.next/server/chunks/ssr/[turbopack]_runtime.js:590:23)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/ssr/[turbopack]_runtime.js:645:12)
+    at esmImport (.next/server/chunks/ssr/[turbopack]_runtime.js:132:20)
+    at [project]/.next-internal/server/app/learn/[base]/[target]/library/resource/[resourceId]/page/actions.js { ACTIONS_MODULE0 => ""[project]/src/actions/finishLesson.ts [app-rsc] (ecmascript)"", ACTIONS_MODULE1 => ""[project]/src/actions/updateWorksheet.ts [app-rsc] (ecmascript)"", ACTIONS_MODULE2 => ""[project]/src/lib/crud/getResource.ts [app-rsc] (ecmascript)"", ACTIONS_MODULE3 => ""[project]/src/actions/checkWord.ts [app-rsc] (ecmascript)"", ACTIONS_MODULE4 => ""[project]/src/actions/generateWorksheet.ts [app-rsc] (ecmascript)"", ACTIONS_MODULE5 => ""[project]/src/app/learn/[base]/[target]/library/resource/[resourceId]/page.tsx [app-rsc] (ecmascript)"" } [app-rsc] (ecmascript) <module evaluation> (.next/server/chunks/ssr/[root of the server]__977a75._.js:605:134)
+    at instantiateModule (.next/server/chunks/ssr/[turbopack]_runtime.js:590:23)
+    at getOrInstantiateModuleFromParent (.next/server/chunks/ssr/[turbopack]_runtime.js:645:12)
+```
+
+I now tested 15.2.0-canary.9. which works fine.","Tested against 15.2.0-canary.10, doesn't work.
+15.2.0-canary.9. works"
+Can't Compile Next.js 15.1.4 with Specific Network Connection,https://github.com/vercel/next.js/tree/canary/examples/reproduction-template,['padroes_de_projeto'],"# Current Behavior:
+When running npm run dev in Next.js 15.1.4, the development server is accessible on the local network by default.
+However, if I connected to a specific network interface (e.g., a specific Ethernet/Wi-Fi adapter), the app fails to compile and gets stuck in the loading stage.
+(Cannot work using ```npm run dev -- --hostname localhost``` too)
+
+# Expected Behavior:
+The developer should be able to run npm run dev in Next.js 15.1.4 without any issues, even when connected to a specific network interface.
+Ideally, there should be an option to disable the local network accessibility and only expose the development server on the local machine.
+![issue_2](https://github.com/user-attachments/assets/b7a83e37-0994-4e5f-9d23-86b3ac8cfbcc)
+![issue_3](https://github.com/user-attachments/assets/a3f737ed-fe52-4c36-b5e7-b194ae6abf90)",_No response_
+Can't Compile Next.js 15.1.4 with Specific Network Connection,https://github.com/vercel/next.js/tree/canary/packages/create-next-app,['padroes_de_projeto'],"# Current Behavior:
+
+When running npm run dev in Next.js 15.1.4, the development server is accessible on the local network by default.
+However, if I connected to a specific network interface (e.g., a VPN or a specific Ethernet/Wi-Fi adapter), the app fails to compile and gets stuck in the loading stage.
+(Cannot work using ```npm run dev -- --hostname localhost``` too)
+# Expected Behavior:
+
+The developer should be able to run npm run dev in Next.js 15.1.4 without any issues, even when connected to a specific network interface.
+Ideally, there should be an option to disable the local network accessibility and only expose the development server on the local machine.
+![issue_2](https://github.com/user-attachments/assets/b10e0224-60cd-4d5a-8e4f-b78c5eff4f46)
+![issue_3](https://github.com/user-attachments/assets/b8e1daf8-b51b-4f47-96bc-48ac2e42d593)",_No response_
+Failed to load plugin 'react-hooks' declared in ' » eslint-config-next/core-web-vitals » Cannot find module 'eslint-plugin-react-hooks' ,,['padroes_de_projeto'],,
+SSR and Cache Control Issues with Next.js: Help Needed,https://github.com/tayebehsafdaridoost,['padroes_de_projeto'],"How can I ensure that the browser always fetches fresh data for SSR pages and doesn’t rely on cached versions?
+Is there a better approach to manage middleware and headers for SSR and dynamic data fetching in Next.js?
+Could there be specific issues with how I’ve configured next.config.js, Middleware, or API responses that cause this behavior?",_No response_
+Importing ESM file from *next/client/*.js fails,,['padroes_de_projeto'],,
+Extended Set Methods (like `union()`) Not Included in Default Polyfills Despite Documentation,.,['arquitetura_software'],,
+Error: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties.,,['padroes_de_projeto'],,
+Router Cache entry doesn't work when query params contain %20,,['arquitetura_software'],,
+`NEXT_REDIRECT` internal error making it to the client,,['padroes_de_projeto'],,
+Unable to install major packages with Next.js 15 and React 19 RC,,['padroes_de_projeto'],,
+Turbopack assigning class variables as undefined explicitly on construction.,,['padroes_de_projeto'],,
+nextjs 15 codemod failed on headless linux,https://github.com/chester-lang/chester/tree/a01bbf243258ff4a679f7df83ec0b67142de7749/site,['padroes_de_projeto'],"```
+Processing 21 files...
+Spawning 11 workers...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 2 files to free worker...
+Sending 1 files to free worker...
+All done.
+Results:
+0 errors
+21 unmodified
+0 skipped
+0 ok
+Time elapsed: 0.545seconds
+ WARN  3 deprecated subdependencies found: glob@7.2.3, inflight@1.0.6, rimraf@2.6.3
+Packages: +303
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Downloading @ast-grep/cli-linux-x64-gnu@0.25.7: 7.33 MB/7.33 MB, done
+Progress: resolved 339, reused 80, downloaded 223, added 303, done
+.cache/pnpm/dlx/bd6mfpigkbwzyrlvutff2j2wqe/192a97fa005-5d3/node_modules/.pnpm/esbuild@0.23.1/node_modules/esbuild: Running postinstall script...
+.cache/pnpm/dlx/bd6mfpigkbwzyrlvutff2j2wqe/192a97fa005-5d3/node_modules/.pnpm/@ast-grep+cli@0.25.7/node_modules/@ast-g.cache/pnpm/dlx/bd6mfpigkbwzyrlvutff2j2wqe/192a97fa005-5d3/node_modules/.pnpm/esbuild@0.23.1/node_modules/esbuild: Run.cache/pnpm/dlx/bd6mfpigkbwzyrlvutff2j2wqe/192a97fa005-5d3/node_modules/.pnpm/@ast-grep+cli@0.25.7/node_modules/@ast-g.cache/pnpm/dlx/bd6mfpigkbwzyrlvutff2j2wqe/192a97fa005-5d3/node_modules/.pnpm/keytar@7.9.0/node_modules/keytar: Running install script, done in 1.4s
+Usage: <command> [options]
+
+Commands:
+  codemod            runs a codemod or recipe                                                                [default]
+  codemod list       lists all the codemods & recipes in the public registry. can be used to search by name and tags
+                                                                                                 [aliases: ls, search]
+  codemod learn      exports the current `git diff` in a file to before/after panels in the Codemod Studio
+  codemod login      logs in through authentication in the Codemod Studio
+  codemod logout     logs out
+  codemod whoami     prints the user data of currently logged in user
+  codemod publish    publish the codemod to Codemod Registry
+  codemod unpublish  unpublish previously published codemod from Codemod Registry
+  codemod init       initialize a codemod package
+  codemod feedback   submit feedback to the Codemod team
+
+Options:
+      --help            Show help                                                                            [boolean]
+      --no-telemetry    Disable telemetry                                                                    [boolean]
+  -v, -v, --version     Prints the latest version of the codemod                                             [boolean]
+      --esm             Use to specify that you intend to use ESM-specific features in your codemods.
+                                                                                            [boolean] [default: false]
+  -j, --json            Respond with JSON                                                   [boolean] [default: false]
+      --no-cache        Disable cache for HTTP(S) requests                                                   [boolean]
+  -i, --include         Glob pattern(s) for files to include                                                   [array]
+  -e, --exclude         Glob pattern(s) for files to exclude
+               [array] [default: node_modules, .next, dist, build, *.d.ts, version control folders, gitignore entries]
+  -t, --target          Input directory path                                                                  [string]
+  -s, --source          Source path of the local codemod to run                                               [string]
+      --engine          Engine to be used with standalone codemod. Can be used to skip the prompt.
+                            [string] [choices: ""jscodeshift"", ""recipe"", ""ts-morph"", ""filemod"", ""ast-grep"", ""workflow""]
+      --logs            Print codemod execution errors into a logfile                       [boolean] [default: false]
+      --format                                                                              [boolean] [default: false]
+  -n, --threads         Number of worker threads                                                 [number] [default: 4]
+  -d, --dry             Perform a dry run                                                   [boolean] [default: false]
+  -m, --mode            Output mode to run the codemod in:
+                        - json: Disables any stdout and only prints out JSON output
+                         if a codemod returns any.                       [string] [choices: ""json"", ""plain"", ""silent""]
+      --no-install      Disable packages installation for the codemod run if there is `deps` field declared in its con
+                        figuration                                                                           [boolean]
+      --readme          Prints description/readme of the codemod if available in the configuration           [boolean]
+      --config          Prints configuration file of the codemod                                             [boolean]
+      --cloud           Run codemod in the cloud                                            [boolean] [default: false]
+      --no-interactive  Disable interactive mode                                                             [boolean]
+
+[Error: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable]
+Error: Command failed: pnpx codemod@latest react/19/migration-recipe --no-interactive
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at checkExecSyncError (node:child_process:888:11)
+    at execSync (node:child_process:960:15)
+    at runUpgrade (/home/user/.npm/_npx/6a090669e21b4303/node_modules/@next/codemod/bin/upgrade.js:256:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Command.<anonymous> (/home/user/.npm/_npx/6a090669e21b4303/node_modules/@next/codemod/bin/next-codemod.js:51:9) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 1491,
+  stdout: null,
+  stderr: null
+}
+```",_No response_
+Runtime error after importing ibm_db library,https://www.npmjs.com/package/ibm_db,['padroes_de_projeto'],"**corrent behavior:**
+Throwing untime error while calling API route which internally connects to IBM DB
+
+![Image](https://github.com/user-attachments/assets/74e41407-10a4-4e24-87ae-4b6949d05172)
+
+**Expected Behavior:**
+Should successfully make API call and fetch data from IBM DB and return respose","I tested by ""npm run dev"" command with above mentioned dependecies and getting error always.
+Tried with plain node js application with ibm_db library and worked properly without any error"
+Eslint should report unnecessary client client component,https://github.com/vercel/next.js/discussions/74520,['padroes_de_projeto'],Should report error,_No response_
+Infinite intercept-console-error log loop,-,['arquitetura_software'],"I expected the error log to show up once per render but it keeps logging non-stop
+
+<img width=""531"" alt=""next-15-error-log-bug"" src=""https://github.com/user-attachments/assets/8c5dc258-dd33-4ae3-990b-ec46c66eb836"" />
+ (without re-rendering)","I tested 15.0.0 up to 15.1.3 and it was introduced in 15.1.0
+
+Don't think a minimal reproduction link is needed for this one"
+Valid `this` in server actions,,['padroes_de_projeto'],,
+Vercel Deployment: Cache Revalidation Failure in Next.js,,['padroes_estilos_arquiteturais'],,
+"Props must be serializable for components in ""use client"" file (for discussion #46795)",https://github.com/vercel/next.js,['padroes_de_projeto'],"Current: Typescript (Next.js version) will give a warning (the title) to either a) make props serializable, or b) to postfix the prop name with 'Action'. This has led to an unnecessary amount of renamings simply to avoid this error - where the majority of cases **don't have anything to do with Server Actions at all.**
+
+Expected: No errors when passing props unrelated to SA or the client-server boundary, especially in cases where client components are layered.","Didn't provide a repro because I'm lazy and I think there's enough context within the discussion thread I linked.
+
+See: https://github.com/vercel/next.js/discussions/46795"
+"Props must be serializable for components in ""use client"" file - Issue for #46795",https://github.com/vercel/next.js/discussions/46795,['padroes_de_projeto'],"[Current Behavior] Typescript (Next.js version) will give a warning (the title) to either a) make props serializable, or to postfix the prop name with 'Action'. This has led to an unnecessary amount of renamings simply to avoid this error - where the majority of cases **don't have anything to do with Server Actions at all.
+
+[Expected Behavior] No errors when passing props unrelated to SA or the client-server boundary, especially in cases where client components are layered.
+
+[Additional Context] Didn't provide a repro because I'm lazy and I think there's enough context within the discussion thread I linked.",_No response_
+[DynamicIO] [Sitemap] Unable to create a cached/static `sitemap.ts` with `use cache`,,['padroes_de_projeto'],,
+"When opening DevTools and hitting refresh in Chrome, unable to view page",https://github.com/KingJulius/react-fundamentals-practice,['padroes_de_projeto'],"Unable to refresh the page when DevTools is open. This in turn cannot be used to see the update in styling and elements from 1 state to another during a page refresh degrading the existing developer experience. I have also tested this in next version `15.1.0` as well, and I am still facing this issue.",This issue is reproducible locally in the dev environment. This issue is only in Chrome. Tested this using Firefox and not facing this issue on this browser.
+Parallel Routes not working on Cloud Run in Next.js 15,,['padroes_de_projeto'],,
+`'>' expected` in ./node_modules/next/dist/server/lib/router-utils/filesystem.d.ts:65:72,https://github.com/go-ahead-and-close-fyi-downgrade-workaround-exists,['padroes_de_projeto'],"This blocks a deployment in Vercel.
+
+This happens to me on 15.0.2, 15.0.3, and 15.0.4
+
+It seems at least two other souls are having trouble with this recently: https://stackoverflow.com/questions/79222153/nextjs-error-running-npm-run-build-node-modules-next-dist-server-lib-rout","Recently upgraded from an `^13.0.0` using page router.
+
+Note - downgrading to `14.2.20` fixes the issue"
+Error Overlay violates trusted types and breaks the entire app,will share later,['padroes_de_projeto'],"Expected: 
+The hydration error modal shows up on top of the application UI.
+
+Actual:
+The application UI shows up for a second, and quickly flips to a blank page. hydration error modal doesn't show up. In the console there is such error complaining about the violation of trusted types:
+<img width=""1411"" alt=""image"" src=""https://github.com/user-attachments/assets/fa823873-226d-425a-b911-2cc76e0b094c"">
+
+Above it was the actual hydration error:
+<img width=""1413"" alt=""image"" src=""https://github.com/user-attachments/assets/394b44bd-3444-4c08-8dfe-b603bbca9ff4"">
+
+try printing out the default trusted policy we can see it's defined:
+<img width=""335"" alt=""image"" src=""https://github.com/user-attachments/assets/891b0074-5c55-413e-8c9f-08893b441b5a"">
+
+try adding console.log statements in the file that adds default trusted policy we can see it runs pretty early and before the hydration error was thrown.
+<img width=""1019"" alt=""image"" src=""https://github.com/user-attachments/assets/d3afa723-fd9e-4875-8976-237e26ce4598"">
+
+<img width=""856"" alt=""image"" src=""https://github.com/user-attachments/assets/ca21935d-750a-4181-8461-4407b90182d6"">
+
+Clicking into the error stack, it shows this .innerHTML setting statement throws the error:
+<img width=""347"" alt=""image"" src=""https://github.com/user-attachments/assets/870c974a-5053-45b8-84cb-ac3bed714a11"">
+
+
+If we fix the hydration error the application loads fine.",_No response_
+"Route ""/"" used `Date.now()` instead of using `performance` ... when using TanStack react query and dynamicIO",,"['arquitetura_software', 'padroes_de_projeto']",,
+API Routes Responses Not Being Gzipped in Next.js App Router,invalid link,['arquitetura_software'],"```yaml
+**Current**
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 12345
+Date: Mon, 11 Dec 2024 12:34:56 GMT
+
+**Expected**: The response should be gzipped if the **Accept-Encoding: gzip** header is present.
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Encoding: gzip
+Content-Length: 4567
+Date: Mon, 11 Dec 2024 12:34:56 GMT","- This issue is reproducible in both development (next dev) and production (next start) modes.
+- Tested with Next.js versions 14.1.0 and 15.0.4.
+- Static assets are gzipped correctly by Next.js, but API route responses are not.
+- There is no middleware or CDN in use during these tests. I expected gzip compression to be handled automatically by the framework."
+"Codemod upgrade script does not consider the absence of the ""dev"" script in the package.json",https://stackblitz.com/edit/nextjs-vewqbk?file=package.json,['padroes_de_projeto'],"The current behaviour is throwing error if the dev script if not found.
+We should check for the nullability of the devScript before trying to run `.includes` on the string.
+
+Code: 
+```
+async function suggestTurbopack(packageJson: any): Promise<void> {
+  const devScript: string = packageJson.scripts['dev']
+  if (devScript.includes('--turbo')) return
+
+  const responseTurbopack = await prompts(
+    {
+      type: 'confirm',
+      name: 'enable',
+      message: 'Enable Turbopack for next dev?',
+      initial: true,
+    },
+    { onCancel }
+  )
+
+```",_No response_
+"""Module not found: Can't resolve..."" error in monorepo with sibling package installed while using Turbopack in DEV",https://github.com/bratislava/konto.bratislava.sk/tree/next-15-turbopack-bug,['padroes_de_projeto'],"When including a locally build package in monorepo, Turbopack fails to compile:
+
+```
+> city-account-next@1.5.0 dev
+> next dev --turbopack | pino-pretty -c
+
+   Ôû▓ Next.js 15.0.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Environments: .env.development.local, .env.development, .env
+
+ Ô£ô Starting...
+ Ô£ô Ready in 1108ms
+ ⚠ Webpack is configured while Turbopack is not, which may cause problems.
+ ⚠ See instructions if you need to configure Turbopack:
+  https://nextjs.org/docs/app/api-reference/next-config-js/turbo
+
+ Ôùï Compiling / ...
+ ⨯ ./components/forms/useFormContext.tsx:4:1
+Module not found: Can't resolve 'forms-shared/definitions/formDefinitionTypes'
+   2 | import { GetFileResponseReducedDto } from '@clients/openapi-forms'
+   3 | import { GenericObjectType } from '@rjsf/utils'
+>  4 | import {
+     | ^^^^^^^^
+>  5 |   isSlovenskoSkFormDefinition,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  6 |   isSlovenskoSkTaxFormDefinition,
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  7 | } from 'forms-shared/definitions/formDefinitionTypes'
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 | import { ClientFileInfo } from 'forms-shared/form-files/fileStatus'
+   9 | import { SummaryJsonForm } from 'forms-shared/summary-json/summaryJsonTypes'
+  10 | import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react'
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+```
+
+When running the legacy dev build version using `npm run dev-legacy`, everything runs perfectly as before:
+```
+> city-account-next@1.5.0 dev-legacy
+> next dev | pino-pretty -c
+
+   Ôû▓ Next.js 15.0.3
+   - Local:        http://localhost:3000
+   - Environments: .env.development.local, .env.development, .env
+
+ Ô£ô Starting...
+ Ô£ô Ready in 2.8s
+ Ôùï Compiling / ...
+ Ô£ô Compiled / in 9.6s (3428 modules)
+ GET / 200 in 11670ms
+ GET / 200 in 384ms
+ Ô£ô Compiled in 1354ms (3428 modules)
+```",I've commited `dist` of the respective package to speed up the process and ran codemod to upgrade to latest version. Also I've also included `npm run dev-legacy` which doesn't use Turbopack for comparision.
+Return to previous page How to keep page status,https://codesandbox.io/p/devbox/l3cty4,['padroes_de_projeto'],"Current behavior:
+1. In the home page, there is a counter and a uniqueId,
+2. Click add, the counter will increase
+3. Click about at the top, go to the about page and return, the counter has been reset, and the uniqueId is still the same.
+4. (home- > about- > home) Click about at the top, and click home. At this time, the data of the first home and the second home are the same.
+
+Expected behavior:
+When returning to the previous page, the original page data should be retained (using zustand, the context should be achievable), but how to distinguish the data of the first home and the second home, so that the two pages have their own state
+
+Maybe I overlooked some configuration?
+(Above is machine translation)",_No response_
+Private enviroments variables not working with react Msal ,None,['padroes_de_projeto'],"This error occurs because the `AZURE_AD_TENANT` environment variable is not being recognized, resulting in the tenant identifier being `undefined`. As a result, the login process fails, and I am unable to authenticate the user.
+
+**Expected Behavior**:
+I expect the login process to initiate successfully without any errors when the `loginRedirect()` function is called. Specifically, I expect the following:
+
+1. The `AZURE_AD_TENANT` environment variable should be correctly loaded and accessible, allowing the authority URL to be constructed properly.
+2. Upon successful authentication, I should receive a valid authentication response containing user information and access tokens.
+3. The console should display the message ""Login successful:"" followed by the authentication response object.","When I attempt to log in using the MSAL library with the provided configuration, I expect the following behavior:
+
+1. **Successful Authentication**:
+   - The login process should initiate without errors when the `loginRedirect()` function is called.
+   - Upon successful authentication, I should receive a valid authentication response containing user information and access tokens.
+
+2. **User Redirection**:
+   - After successful login, the user should be redirected to the specified `redirectUri` (e.g., `http://localhost:3000`).
+
+3. **Access to Protected Resources**:
+   - Once authenticated, the user should be able to access protected resources or APIs that require authentication, using the access token received during the login process.
+
+4. **No Errors**:
+   - I expect that no errors will occur during the login process, particularly the error `AADSTS900023: Specified tenant identifier 'undefined' is neither a valid DNS name, nor a valid external domain.` should not be displayed.
+
+
+##Comments
+
+If I use NEXT_PUBLIC in the environment variables, it works normally, but I can't because it is an internal application."
+Postcss dependency updates do not cause a rebuild with Turbopack and app router,https://codesandbox.io/p/devbox/cocky-gagarin-nm5875?workspaceId=e0193290-13d9-42c6-9d62-7834e15587d2,['padroes_de_projeto'],"Changing the styles in the `styles.css` file do not cause a rebuild of the CSS files. 
+
+This started happening with Next 15 (works on Next 14) and is only observed when using Turbopack and the app router.",_No response_
+Vercel build will fail if there's a `[...catchAll]` route that does not await the params,,['padroes_estilos_arquiteturais'],,
+CSP with nonce does not work,https://github.com/deepankarit/nextjs,['padroes_de_projeto'],"**My Script as follows**
+```
+module.exports = {
+  reactStrictMode: false,
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // Apply these headers to all routes in your application.
+        headers: [
+          {
+            key: 'Cache-Control',
+            value:
+              'max-age=900, no-cache, no-store, must-revalidate, pre-check=0, post-check=0, s-maxage=0',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: `default-src 'self'; object-src 'none'; form-action 'none'; script-src 'self'; report-to csp-endpoint;`,
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=86400; includeSubdomains; preload',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://*.goindigo.in',
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, PUT, DELETE, OPTIONS',
+          },
+        ],
+      },
+    ];
+  },
+}
+```
+
+
+
+**Error look like this** 
+
+Refused to apply inline style because it violates the following Content Security Policy directive: ""default-src 'self'"". Either the 'unsafe-inline' keyword, a hash ('sha256-4/2nIlfwIVTJ1+JcNQ6LkeVWzNS148LKAJeL5yofdN4='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.
+Understand this errorAI
+localhost/:1 Refused to apply inline style because it violates the following Content Security Policy directive: ""default-src 'self'"". Either the 'unsafe-inline' keyword, a hash ('sha256-gTyOjA8aRsBIkjMhpPUWfT1pjh0iUZZwPPM3SmWD1eE='), or a nonce ('nonce-...') is required to enable inline execution. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback.
+Understand this errorAI
+react-refresh.js:30 Uncaught EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: ""script-src 'self'"".
+ 
+    at ./node_modules/next/dist/compiled/@next/react-refresh-utils/dist/runtime.js (react-refresh.js:30:26)
+    at options.factory (webpack.js:654:31)
+    at __webpack_require__ (webpack.js:37:33)
+    at __webpack_exec__ (react-refresh.js:58:61)
+    at react-refresh.js:59:37
+    at webpackJsonpCallback (webpack.js:1202:39)
+    at Array.forEach (<anonymous>)
+    at webpack.js:1216:31
+    at webpack.js:1218:12
+    at webpack.js:1229:12
+./node_modules/next/dist/compiled/@next/react-refresh-utils/dist/runtime.js @ react-refresh.js:30
+options.factory @ webpack.js:654
+__webpack_require__ @ webpack.js:37
+__webpack_exec__ @ react-refresh.js:58
+(anonymous) @ react-refresh.js:59
+webpackJsonpCallback @ webpack.js:1202
+(anonymous) @ webpack.js:1216
+(anonymous) @ webpack.js:1218
+(anonymous) @ webpack.js:1229Understand this errorAI",_No response_
+Failed to find server action/Cannot read properties of undefined (reading 'workers'),,['padroes_estilos_arquiteturais'],,
+"Next 15 migration: next/navigation ""redirect"" method does not execute from server action",,['padroes_de_projeto'],,
+Issues with Handling File Inputs and Image Previews in Next.js 15 Form Actions,https://github.com/Marabii/next-js-issue,['padroes_de_projeto'],"**Description:**  
+I'm experiencing challenges when working with file inputs, specifically image uploads, in a Next.js 15 application using form actions. The issues arise when attempting to preview selected images and implement a remove functionality. Below are the detailed problems and a minimal reproducible example.
+
+**Issues Encountered:**
+
+1. **Image Inputs Reset on Submit with Validation Errors:**
+   - When the form is submitted, the file input resets, causing the user to reselect images if there are validation errors handled in the server action.
+   - Despite the file input resetting, the `selectedImages` state on the client side still holds the previously selected images and displays the previews.
+   - This discrepancy leads to confusion as the user sees the previews but is required to re-upload the images.
+
+2. **Inability to Synchronize File Input with Selected Images State:**
+   - It's not possible to programmatically set the value of the file input (e.g., `value={selectedImages}`) due to security restrictions.
+   - This limitation prevents synchronizing the file input with the `selectedImages` state, especially when users remove images from the preview. The file input remains unchanged, leading to inconsistencies.
+
+**Impact:**  
+These issues hinder the user experience by creating confusion between the displayed image previews and the actual state of the file input. Users may find it frustrating to re-upload images after encountering validation errors, and the inability to manage the file input state programmatically limits the functionality of the form.
+
+**Expected Behavior:**
+
+- **On Validation Errors:**
+  - The file input should retain the selected files to prevent users from re-uploading them.
+  - The image previews should accurately reflect the current state of the file input.
+
+- **Synchronizing File Input with State:**
+  - It should be possible to programmatically manage the file input's value to match the `selectedImages` state. I know it's not currently possible due to security reasons, but there has to be a workaround.",_No response_
+Browser back button on dynamic page causing wrong render of page on IOS (IPhone).,https://github.com/chronostep-inc/warple/tree/staging/node,['arquitetura_software'],"Current:
+
+1. From Home Page Click A link that will go either Country  or City Detail Page
+2. From Country/City Detail Page Click a school to redirect to School Detail Page
+3. Click browser back button Instead of going back to Country/City Detail Page it goes back to Home Page
+
+Expected:
+
+1. From Home Page Click A link that will go either Country  or City Detail Page
+2. From Country/City Detail Page Click a school to redirect to School Detail Page
+3. Click browser back button Should go back to Country/City Detail Page",_No response_
+Nested sitemaps seem to 404 in Next.js 15,,['padroes_de_projeto'],,
+.docx parsing not working with mammoth using turbopack,,['padroes_de_projeto'],,
+`next/navigation` `redirect` error with relative URL,https://github.com/Crane101/next-15-relative-redirect-error,['padroes_de_projeto'],,"The [documentation](https://nextjs.org/docs/app/api-reference/functions/redirect#parameters) for the redirect function states that the `url` parameter ""_Can be a relative or absolute path._"", which was the case in next 14 - but after upgrading to v15 it seems that only absolute paths will work. From the error I'm guessing that it's using the verbatim relative path to create a new `URL` object?
+
+Pretty essential for my use case as there does not appear to be a way to access the current url or route parameters from a server action in order to construct an absolute version of the url."
+Syntax error in ppr-navigations.js,https://github.com/JackatDJL/Athenetz-SV/tree/v0.0.2-dev,['padroes_de_projeto'],"Current behavior:
+While fixing another (i think non nextjs) issue
+```
+node:async_hooks
+Module build failed: UnhandledSchemeError: Reading from ""node:async_hooks"" is not handled by plugins (Unhandled scheme).
+Webpack supports ""data:"" and ""file:"" URIs by default.
+```
+by tweaking webpack
+```
+...
+config.module.rules.push({
+      test: /\.js$/,
+      loader: 'string-replace-loader',
+      options: {
+        search: 'node:',
+        replace: '',
+      },
+});
+...
+```
+yarn build suddently reports a syntax error:
+```
+$ yarn build
+   ▲ Next.js 15.0.2
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./node_modules/next/dist/client/components/router-reducer/ppr-navigations.js
+Error:   × An object member cannot be declared optional
+     ╭─[D:\dev\Athenetz-SV\node_modules\next\dist\client\components\router-reducer\ppr-navigations.js:168:1]
+ 165 │         route: patchRouterStateWithNewChildren(newRouterState, patchedRouterStateChildren),
+ 166 │         // Only return the new cache node if there are pending tasks that need to be resolved
+ 167 │         // by the dynamic data from the server. If they don't, we don't need to trigger 
+a dynamic request.
+ 168 │          needsDynamicRequest ? newCacheNode : null,
+     ·                              ─
+ 169 │         children: taskChildren
+ 170 │     };
+ 171 │ }
+     ╰────
+  × Unexpected token `newCacheNode`. Expected ... , *,  (, [, :, , ?, = or an identifier       
+     ╭─[D:\dev\Athenetz-SV\node_modules\next\dist\client\components\router-reducer\ppr-navigations.js:168:1]
+ 165 │         route: patchRouterStateWithNewChildren(newRouterState, patchedRouterStateChildren),
+ 166 │         // Only return the new cache node if there are pending tasks that need to be resolved
+ 167 │         // by the dynamic data from the server. If they don't, we don't need to trigger 
+a dynamic request.
+ 168 │          needsDynamicRequest ? newCacheNode : null,
+     ·                                ────────────
+ 169 │         children: taskChildren
+ 170 │     };
+ 171 │ }
+     ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./node_modules/next/dist/client/components/router-reducer/ppr-navigations.js
+./node_modules/next/dist/client/components/router-reducer/reducers/restore-reducer.js
+./node_modules/next/dist/client/components/router-reducer/router-reducer.js
+./node_modules/next/dist/shared/lib/router/action-queue.js
+./node_modules/next/dist/client/app-index.js
+
+
+> Build failed because of webpack errors
+```
+after some time i fixed it (localy) by rewriting a part of ppr-navigations.js (dist)
+before:
+```
+return {
+        // Return a cloned copy of the router state with updated children.
+        route: patchRouterStateWithNewChildren(newRouterState, patchedRouterStateChildren),
+        // Only return the new cache node if there are pending tasks that need to be resolved
+        // by the dynamic data from the server. If they don't, we don't need to trigger a dynamic request.
+        node: needsDynamicRequest ? newCacheNode : null,
+        children: taskChildren
+    };
+```
+after:
+```
+function newCacheNodeNeeded() {
+        if (needsDynamicRequest) {
+            return newCacheNode;
+        } else {
+            return null;
+        }
+    }
+
+    const isNewCacheNodeNeeded = newCacheNodeNeeded();
+    return {
+        // Return a cloned copy of the router state with updated children.
+        route: patchRouterStateWithNewChildren(newRouterState, patchedRouterStateChildren),
+        // Only return the new cache node if there are pending tasks that need to be resolved
+        // by the dynamic data from the server. If they don't, we don't need to trigger a dynamic request.
+        node: isNewCacheNodeNeeded
+    };
+```
+test before:
+syntax error (mentioned above / didnt want to paste again)
+
+test after:
+```
+$ yarn build
+   ▲ Next.js 15.0.2
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+ ✓ Linting and checking validity of types    
+ ✓ Collecting page data    
+ ✓ Generating static pages (7/7)
+ ✓ Collecting build traces    
+ ✓ Finalizing page optimization
+
+Route (app)                              Size     First Load JS
+┌ ƒ /                                    18.3 kB         252 kB
+├ ○ /_not-found                          896 B           101 kB
+├ ○ /admin                               55.7 kB         155 kB
+├ ƒ /api/auth                            725 B           234 kB
+└ ○ /api/util                            726 B           234 kB
++ First Load JS shared by all            99.6 kB
+  ├ chunks/149-fc3013bbe64fd5f3.js       45.1 kB
+  ├ chunks/4bd1b696-d625144d88556424.js  52.6 kB
+  └ other shared chunks (total)          1.96 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+```
+
+Vercel trying to host with npm nextjs (without that change in the dist)
+![image](https://github.com/user-attachments/assets/9ad45e28-fb78-4f1d-b2d3-0cd76cb3c50c)
+
+Am i allowed to try this on my own? (make pr?)
+
+ty
+Jack","Before:
+![image](https://github.com/user-attachments/assets/9ad45e28-fb78-4f1d-b2d3-0cd76cb3c50c)
+
+After
+![image](https://github.com/user-attachments/assets/cfcc5403-ba40-49e9-a90f-31cceb85f357)"
+Unhandled rejection when using rewrite proxy,,['padroes_de_projeto'],,
+CSS not loaded correctly in next@15 when using assetPrefix and next/dynamic,,['padroes_de_projeto'],,
+Nextjs 15 Create Next App Default Template Hydration Error,https://github.com/devaoto/elyzen-nxt,['padroes_de_projeto'],,_No response_
+Provide a way to set custom cache directory,,['padroes_de_projeto'],,
+LGPL-3.0 license usage of sharp dependencies blocks us from using Next 15,https://github.com/vercel/next.js,['padroes_estilos_arquiteturais'],Next.js shouldn't have a dependency with LGPL-3.0 license,_No response_
+crossOrigin: true is not applied on Manifest metadata,NA,['padroes_de_projeto'],"Following the steps from the previous section, I expected to have` crossorigin=""use-credentials""` on manifest link, but nothing changed.
+
+NOTE: I need it as there is cf reverse proxy to avoid a cors issue.",_No response_
+"""Server Actions must be async functions."" being reported incorrectly",,['padroes_de_projeto'],,
+Cannot install dependencies after upgrading to Next 15 and React 19 RC,https://github.com/ravinggenius/minecraft-tools/tree/react-19-blocks-package-install,['padroes_de_projeto'],"I used the Next upgrade codemod tonight (2024-11-01) to upgrade to Next 15, which installed React 19 as one of the steps. Now I cannot install any new package or upgrade any existing package. Even installing current dependencies in a fresh git checkout gives me an error:
+
+```shell
+$ npm ci
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: react-i18next@15.0.2
+npm error Found: react@19.0.0-rc-02c0e824-20241028
+npm error node_modules/react
+npm error   react@""19.0.0-rc-02c0e824-20241028"" from the root project
+npm error   peer react@""^18.2.0 || 19.0.0-rc-02c0e824-20241028"" from next@15.0.2
+npm error   node_modules/next
+npm error     next@""15.0.2"" from the root project
+npm error   2 more (react-dom, styled-jsx)
+npm error
+npm error Could not resolve dependency:
+npm error peer react@"">= 16.8.0"" from react-i18next@15.0.2
+npm error node_modules/react-i18next
+npm error   react-i18next@""^15.0.2"" from the root project
+npm error
+npm error Conflicting peer dependency: react@18.3.1
+npm error node_modules/react
+npm error   peer react@"">= 16.8.0"" from react-i18next@15.0.2
+npm error   node_modules/react-i18next
+npm error     react-i18next@""^15.0.2"" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /Users/ravinggenius/.npm/_logs/2024-11-02T03_18_49_365Z-eresolve-report.txt
+```",_No response_
+waitUntil not working for Remix.run apps ?,,"['arquitetura_software', 'padroes_estilos_arquiteturais']",,
+_owner field of React component set to different value after enabling turbopack,,['padroes_de_projeto'],,
+"The upgrade codemod always requests registry.npmjs.org, even though I have another registry configured",https://github.com/vercel/next.js/blob/382d16dd3cb608ca2185a7dc3d438f75d8fc8495/packages/next-codemod/bin/upgrade.ts#L89,['padroes_de_projeto'],"Currently, the package installs fine, but the command fails because it cannot load registry.npmjs.org. This makes updating to Next.js 15 harder.
+
+Instead, it should adhere the registry configuration.","It looks like the url is hardcoded here: https://github.com/vercel/next.js/blob/382d16dd3cb608ca2185a7dc3d438f75d8fc8495/packages/next-codemod/bin/upgrade.ts#L89
+
+Instead, I would expect it to utilize an NPM command, which is already done a few times in that file."
+Cache is always stale on startup for dynamic ISR pages,https://github.com/PeterGardenas/next-dynamic-isr-stale-on-startup,['arquitetura_software'],"Current behavior:
+1. Initial request to /bar shows the same date. For the later of the requests `x-nextjs-cache`  header is  STALE
+2. /bar is revalidate
+3. When refreshing localhost:3000/bar and localhost:3001/bar will display different dates
+
+Expected:
+1. Initial request to /bar shows the same date. For the later of the requests `x-nextjs-cache`  header is  HIT
+2. /bar is not modified
+3. When refreshing localhost:3000/bar and localhost:3001/bar will display same dates
+
+The expected behavior works when doing the sample example for /foo as it is provided in generateStaticParams","This issue exists in Next 14 as well.
+Using a custom cache handler such as [redis-handler](https://github.com/vercel/next.js/tree/canary/examples/cache-handler-redis) resolves the issue of diverging content, the content is still unnecessarily revalidate, causing redundant computation.
+
+A naive debugging attempt indicates that https://github.com/vercel/next.js/blob/97153cc838d24c58c13f583f1d88f21b30a8621a/packages/next/src/server/lib/incremental-cache/index.ts#L223 always return 1 as this.revalidateTimings is not set for isr dynamic routes"
+Type 'Props' does not satisfy the constraint 'PageProps' (generateMetadata),https://github.com/Dannymx/shockinglemon.com/tree/develop,['padroes_de_projeto'],Fails at validating types in generateMetadata methods.,"Only fails in my dynamic pages that generate Metadata info.
+
+```
+.next/types/app/band/[slug]/page.ts:34:29 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ slug: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+34 checkFields<Diff<PageProps, FirstArg<TEntry['default']>, 'default'>>()
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.next/types/app/band/[slug]/page.ts:38:31 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ slug: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+38   checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.next/types/app/blog/[slug]/page.ts:34:29 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ slug: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+34 checkFields<Diff<PageProps, FirstArg<TEntry['default']>, 'default'>>()
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.next/types/app/blog/[slug]/page.ts:38:31 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ slug: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+38   checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.next/types/app/music/[title]/page.ts:34:29 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ title: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+34 checkFields<Diff<PageProps, FirstArg<TEntry['default']>, 'default'>>()
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.next/types/app/music/[title]/page.ts:38:31 - error TS2344: Type 'Props' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ title: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+38   checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
+```"
+Unable to configure webpack dev server. ,,['arquitetura_software'],,
+Next.js Stable Issue: Can't Install Any Libraries,https://github.com/Grenish/porfolio,['padroes_de_projeto'],"In the previous version of nextjs 14 the libraries were installed without any errors but in nextjs 15 stable it is showing errors while installing
+
+Logs:
+```bash
+Something went wrong. Please check the error below for more details.
+If the problem persists, please open an issue on GitHub.
+
+Command failed with exit code 1: npm install tailwindcss-animate class-variance-authority lucide-react @radix-ui/react-icons clsx tailwind-merge
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR!
+npm ERR! While resolving: gagan-porfolio@0.1.0
+npm ERR! Found: react@19.0.0-rc-69d4b800-20241021
+npm ERR! node_modules/react
+npm ERR!   react@""19.0.0-rc-69d4b800-20241021"" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@""^16.x || ^17.x || ^18.x"" from @radix-ui/react-icons@1.3.0
+npm ERR! node_modules/@radix-ui/react-icons
+npm ERR!   @radix-ui/react-icons@""*"" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR!
+npm ERR! For a full report see:
+npm ERR! C:\Users\Grenish\AppData\Local\npm-cache\_logs\2024-10-27T14_00_01_841Z-eresolve-report.txt
+
+npm ERR! A complete log of this run can be found in: C:\Users\Grenish\AppData\Local\npm-cache\_logs\2024-10-27T14_00_01_841Z-debug-0.log
+```
+
+```bash
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR!
+npm ERR! While resolving: gagan-porfolio@0.1.0
+npm ERR! Found: react@19.0.0-rc-69d4b800-20241021
+npm ERR! node_modules/react
+npm ERR!   react@""19.0.0-rc-69d4b800-20241021"" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@""^16.8 || ^17 || ^18"" from next-themes@0.3.0
+npm ERR! node_modules/next-themes
+npm ERR!   next-themes@""*"" from the root project
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR!
+npm ERR! For a full report see:
+npm ERR! C:\Users\Grenish\AppData\Local\npm-cache\_logs\2024-10-27T13_58_38_973Z-eresolve-report.txt
+```",I tested installing libraries with and without `turbopack` but the issue was still persistent.
+Specifying webpack configuration using node v23 in next config breaks next build,,['padroes_de_projeto'],,
+Regression in v15.1.0: `cookies()` throws in server action,https://github.com/debel27/next-issue_server-action-context,['padroes_de_projeto'],"**Expected behavior**
+
+The server action runs successfully.
+
+**Actual behavior**
+
+The server action throws, leading to a blank page. The thrown error is:
+
+```
+ ⨯ Error: `cookies` was called outside a request scope. Read more: https://nextjs.org/docs/messages/next-dynamic-api-wrong-context
+    at cookies (src/app/page.tsx:15:15)
+  13 | async function serverAction() {
+  14 |   ""use server"";
+> 15 |   await cookies(); // <- this throws in Next.js 15.1.0 when JS is disabled on the client
+     |               ^
+  16 |   console.log(""action called""); // <- this statement is reached in Next.js 15.0.0
+  17 | } {
+  page: '/'
+}
+ ✓ Compiled /_error in 355ms (807 modules)
+ POST / 500 in 861ms
+```","I think my problem is a regression that was introduced in Next 15.1.0. When I downgrade to 15.0.0, I do not encounter the problem.
+
+```js
+// No problem with these dependencies
+""dependencies"": {
+  ""react"": ""19.0.0-rc-65a56d0e-20241020"",
+  ""react-dom"": ""19.0.0-rc-65a56d0e-20241020"",
+  ""next"": ""15.0.0""
+}
+```
+
+The problem only occurs when JavaScript is disabled on the client. Could it have something to do with hydration?
+
+I only tested the code locally."
+nextjs15 with .babelrc report $ is not a function ,no,['padroes_de_projeto'],"console report message
+
+es.global-this.js:8 Uncaught TypeError: $ is not a function
+    at (app-pages-browser)/n…736510805707:5971:1)
+    at options.factory (webpack.js?v=1736510805707:712:31)
+    at __webpack_require__ (webpack.js?v=1736510805707:37:33)
+    at fn (webpack.js?v=1736510805707:369:21)
+    at (app-pages-browser)/n…736510805707:7159:1)
+    at options.factory (webpack.js?v=1736510805707:712:31)
+    at __webpack_require__ (webpack.js?v=1736510805707:37:33)
+    at fn (webpack.js?v=1736510805707:369:21)",no
+Unable to export metadata from a server page,,['padroes_de_projeto'],,
+Form inputs reset after submission in Next.js 15 when using server actions,,['padroes_de_projeto'],,
+Intercepting Routes with Dynamic catch all segments,https://github.com/programming-with-ia/intercepting-test,['arquitetura_software'],"when
+http://localhost:3001/templates/multi/slug -> http://localhost:3001/showcase/multi/slug show Intercepting page",_No response_
+Error: The user aborted a request.,https://github.com/Agenta-AI/agenta/tree/main/agenta-web,['arquitetura_software'],The app get built from the first time,_No response_
+How to make nextjs build error log more sense?,any build,['arquitetura_software'],"Is there an option in nextjs to make build logs more understandable?
+
+If build has an error, log shows chunk path, but I like to see exact file path, where error occured and line number. If there is error because of request error I'd like to see exact request url and response error code and message.
+
+Is it possible to make logs with such information?
+
+
+```
+ReferenceError: window is not defined
+    at supportUrl (/app/.next/server/chunks/5449.js:153:45)
+    at new BillingAbstract (/app/.next/server/chunks/8753.js:222:89)
+    at new ProfileBilling (/app/.next/server/chunks/5506.js:165:1)
+    at d (/app/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:33:320)
+    at bb (/app/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:36:16)
+    at a.b.render (/app/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:42:43)
+    at a.b.read (/app/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:41:83)
+    at Object.exports.renderToString (/app/node_modules/react-dom/cjs/react-dom-server.node.production.min.js:52:138)
+    at Object.renderPage (/app/node_modules/next/dist/server/render.js:680:46)
+    at Object.defaultGetInitialProps (/app/node_modules/next/dist/server/render.js:350:67)
+
+TypeError: Cannot destructure property 'data' of '(intermediate value)' as it is undefined.
+    at /app/.next/server/chunks/2996.js:5148:17
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async getStaticProps$1 (/app/.next/server/pages/legal/[key]/[documentId]/archive.js:66:21)
+    at async renderToHTML (/app/node_modules/next/dist/server/render.js:386:20)
+    at async /app/node_modules/next/dist/export/worker.js:304:36
+    at async Span.traceAsyncFn (/app/node_modules/next/dist/trace/trace.js:79:20)
+Error occurred prerendering page ""/ru/legal/4game/2944/archive"". Read more: https://nextjs.org/docs/messages/prerender-error
+
+Warning: data for page ""/legal/[key]/[documentId]/archive/[versionId]"" (path ""/legal/4game/33/archive/5575/"") is 208 kB which exceeds the threshold of 128 kB, this amount of data can reduce performance.
+See more info here: https://nextjs.org/docs/messages/large-page-data
+getStaticProps error:  {
+  description: 'No data for key: Innova.Content.Application.Queries.Pages.GetPageQuery',
+  code: 'content.datanotfound'
+}
+getStaticProps error:  {
+  description: 'No data for key: Innova.Content.Application.Queries.Pages.GetPageQuery',
+  code: 'content.datanotfound'
+}
+```",_No response_
+CSS not chunked per page - resulting in loading too much CSS,https://github.com/joostmeijles/css-chunk-not-per-page,['arquitetura_software'],"Currently CSS file contains:
+```
+.page_topLevel__iX_Qv {
+    width: 10
+}
+
+.Component_component__VGHKW {
+    width: 20
+}
+
+.page_test__Mq0km {
+    height: 30
+}
+```
+
+Expected to contain:
+```
+.page_topLevel__iX_Qv {
+    width: 10
+}
+
+.Component_component__VGHKW {
+    width: 20
+}
+```","CSS only present in another page is exposed to unrelated pages. This leads in larger applications to huge (and many) CSS files. Which is bad for performance, e.g. LCP is impacted due to loading CSS.
+
+When you remove the `Component` from `app/test/page.tsx` the CSS does no longer wrongly contain the `.page_test__Mq0km` CSS class.
+
+I tested against 14.2.15 and 15.0.0-rc.1 with the same result."
+Cannot install @next/third-parties in Next.js 15,https://github.com/zakuni/reproduction-app,['padroes_de_projeto'],@next/third-parties should be successfully installed.,"I was trying to upgrade to Next.js 15 from my Next.js 14 project and found the issue.
+`npx @next/codemod@canary upgrade` also fail with dependency conflicts.
+I can complete npm install once with `npm install --force`, but the next time I run `npm install`, I get the same error again"
+Can't use --skip-install (or --yes) flags in @ versions for CLI,,['padroes_de_projeto'],,
+Script Component with beforeInteractive Strategy Not Rendered in Head During Initial HTML Response,https://github.com/vercel/next.js/,['padroes_de_projeto'],,_No response_
+Impossible for end to end test to detect loading state from DOM elements,https://codesandbox.io/p/devbox/shy-http-8h9hh9?file=%2Fapp%2Fpage.tsx&workspaceId=7ecd71f9-9fcd-424c-8c4e-dfa4601f87d5,['padroes_de_projeto'],"Current: impossible to detect loading state from DOM or browser APIs
+
+Expected: possible to detect loading state from DOM or browser APIs",I'm using Playwright for writing end to end tests
+Api route and sitemap are 0kb on build,https://github.com/wispyco/uipatternfactory,['padroes_de_projeto'],"Current
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    149 B           224 kB
+├ ○ /_not-found                          880 B          94.5 kB
+├ ● /[slug]                              148 B           224 kB
+├   ├ /p=animated-circular-navigation
+├   ├ /p=animated-navigation
+├   ├ /p=animated-keyboard
+├   └ [+3 more paths]
+├ ƒ /api/code-convert                    0 B                0 B
+└ ○ /sitemap.xml                         0 B                0 B
++ First Load JS shared by all            93.6 kB
+  ├ chunks/2117-e52a872263eb281e.js      31.8 kB
+  ├ chunks/fd9d1056-7e2f47df778b58ec.js  53.6 kB
+  └ other shared chunks (total)          8.2 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses getStaticProps)
+ƒ  (Dynamic)  server-rendered on demand
+
+expected SiteMap and code-convert to have some size of Bytes.","Everything works fine local, and next build and next start. But when I deploy to the server the api route gets 500."
