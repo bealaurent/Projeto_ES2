@@ -11,22 +11,20 @@ db_config = config.CONFIG_BD
 conn = psycopg2.connect(**db_config)
 cursor = conn.cursor()
 
-# Query para buscar os dados da tabela 'issues' (exemplo de dados na coluna)
 cursor.execute("SELECT issue_id, body FROM issues")
 rows = cursor.fetchall()
 
-# Expressão regular para capturar os dados por tópicos
 pattern = r"### (.*?)\n(.*?)(?=\n###|\Z)"
 
-# Para cada linha da tabela
+
 for row in rows:
     issue_id = row[0]
     texto = row[1]
 
-    # Usando regex para extrair os dados por tópico
+    
     dados = dict(re.findall(pattern, texto, re.DOTALL))
 
-    # Extrair cada valor com base nos tópicos
+    
     link_to_code = dados.get("Link to the code that reproduces this issue", "").strip()
     to_reproduce = dados.get("To Reproduce", "").strip()
     current_vs_expected = dados.get("Current vs. Expected behavior", "").strip()
