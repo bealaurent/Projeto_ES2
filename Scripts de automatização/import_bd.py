@@ -1,17 +1,19 @@
 import psycopg2
 import json
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+import config
+import psycopg2
+
+db_config = config.CONFIG_BD
 
 try:
-    
-    conn = psycopg2.connect(
-        host="localhost",
-        database="Engenharia_da_comp_2",
-        user="api_user",
-        password="colocar_senha",  
-        port=5432                  
-    )
+    conn = psycopg2.connect(**db_config)
     cur = conn.cursor()
     print("Conexão bem-sucedida com o banco de dados.")
+
+    
 
     
     with open("issues_dump.json", "r") as f:

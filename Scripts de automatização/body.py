@@ -1,14 +1,14 @@
 import psycopg2
 import re
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+import config
+import psycopg2
 
-# Conectar ao banco de dados PostgreSQL
-conn = psycopg2.connect(
-    host="localhost",
-    database="Engenharia_da_comp_2",
-    user="api_user",
-    password="ap1s$", 
-    port=5432
-)
+db_config = config.CONFIG_BD
+
+conn = psycopg2.connect(**db_config)
 cursor = conn.cursor()
 
 # Query para buscar os dados da tabela 'issues' (exemplo de dados na coluna)
