@@ -12,6 +12,8 @@ projeto/
 │   │── import_bd.py         # Importa issues do JSON para o banco de dados
 │   │── script-categorizacao.py  # Categoriza os issues por tema
 │   │── script_issues.py     # Coleta issues da API do GitHub
+│── assets/
+│── docs/
 │── config.py                # Configuração do banco de dados
 │── requirements.txt         # Dependências do projeto
 ```
