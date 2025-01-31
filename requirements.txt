@@ -1,0 +1,6 @@
+psycopg2
+pandas
+matplotlib
+seaborn
+requests
+json
